@@ -1,10 +1,10 @@
 const CONFIG = {
   // profile setting (required)
   profile: {
-    name: "batur",
+    name: "ヨウ",
     image: "/avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
-    role: "student",
-    bio: "I love life in Japan",
+    role: "life time student",
+    bio: "I enjoy the life in Japan",
     email: "hello@youjunmei.com",
     linkedin: "",
     github: "",
@@ -12,19 +12,19 @@ const CONFIG = {
   },
   projects: [
     {
-      name: `batur-life`,
+      name: `ヨウ-日本-人生`,
       href: "#",
     },
   ],
   // blog setting (required)
   blog: {
-    title: "batur life",
+    title: "ヨウー日本",
     description: "welcome to my space",
   },
 
   // CONFIG configration (required)
   link: "https://youjunmei.vercel.app",
-  since: 2022, // If leave this empty, current year will be used.
+  since: 2024, // If leave this empty, current year will be used.
   lang: "en-US", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
   ogImageGenerateURL: "https://og-image-korean.vercel.app", // The link to generate OG image, don't end with a slash
 
