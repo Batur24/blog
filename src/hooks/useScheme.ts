@@ -18,7 +18,8 @@ const useScheme = (): [Scheme, SetScheme] => {
   const scheme = data === "light" ? "light" : "dark"
 
   const setScheme = (scheme: "light" | "dark") => {
-    setCookie("scheme", scheme)
+    // setCookie("scheme", scheme)
+    setCookie("scheme", "light")
 
     queryClient.setQueryData(queryKey.scheme(), scheme)
   }
@@ -27,7 +28,8 @@ const useScheme = (): [Scheme, SetScheme] => {
     if (!window) return
 
     const scheme = getCookie("scheme")
-    setScheme(scheme === "light" ? "light" : "dark")
+    // setScheme(scheme === "light" ? "light" : "dark")
+    setScheme("light")
   }, [])
 
   return [scheme, setScheme]

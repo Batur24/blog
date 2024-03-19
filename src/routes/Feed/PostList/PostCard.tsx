@@ -13,15 +13,17 @@ type Props = {
 
 const PostCard: React.FC<Props> = ({ data }) => {
   const category = (data.category && data.category?.[0]) || undefined
+  // const isShortThought = data.tags && data.tags.filter(tag => tag == 'shortThought').length > 0;
+  const isShortThought = data.tags && data.tags.filter(tag => tag == 'ShortThought').length > 0;
 
   return (
-    <StyledWrapper href={`/${data.slug}`}>
+    <StyledWrapper href={isShortThought ? '#' : `/${data.slug}`} style={{ cursor: isShortThought ? 'initial' : 'pointer'}}>
       <article>
-        {category && (
+        {/* {category && (
           <div className="category">
             <Category>{category}</Category>
           </div>
-        )}
+        )} */}
         {data.thumbnail && (
           <div className="thumbnail">
             <Image
@@ -47,12 +49,12 @@ const PostCard: React.FC<Props> = ({ data }) => {
           <div className="summary">
             <p>{data.summary}</p>
           </div>
-          <div className="tags">
+          {/* <div className="tags">
             {data.tags &&
               data.tags.map((tag: string, idx: number) => (
                 <Tag key={idx}>{tag}</Tag>
               ))}
-          </div>
+          </div> */}
         </div>
       </article>
     </StyledWrapper>
@@ -102,7 +104,6 @@ const StyledWrapper = styled(Link)`
       padding: 1rem;
 
       &[data-thumb="false"] {
-        padding-top: 3.5rem;
       }
       > .top {
         display: flex;
@@ -118,8 +119,6 @@ const StyledWrapper = styled(Link)`
           font-size: 1.125rem;
           line-height: 1.75rem;
           font-weight: 500;
-
-          cursor: pointer;
 
           @media (min-width: 768px) {
             font-size: 1.25rem;
