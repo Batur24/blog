@@ -1,4 +1,5 @@
 import styled from "@emotion/styled"
+import Link from "next/link"
 import React from "react"
 import { Emoji } from "src/components/Emoji"
 
@@ -12,9 +13,9 @@ const NavList: React.FC<Props> = () => {
         <Emoji>🧭</Emoji> Nav
       </div>
       <div className="list">
-          <a href="/">Home</a>
-          <a href="/photo">Photo</a>
-          <a href="/project">Project</a>
+          <Link href="/">Home</Link>
+          <Link href="/photo">Photo</Link>
+          <Link href="/project">Project</Link>
       </div>
     </StyledWrapper>
   )
