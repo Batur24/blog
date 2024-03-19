@@ -13,8 +13,7 @@ type Props = {
 
 const PostCard: React.FC<Props> = ({ data }) => {
   const category = (data.category && data.category?.[0]) || undefined
-  // const isShortThought = data.tags && data.tags.filter(tag => tag == 'shortThought').length > 0;
-  const isShortThought = data.tags && data.tags.filter(tag => tag == 'ShortThought').length > 0;
+  const isShortThought = data.tags && data.tags.filter(tag => tag == '随想').length > 0;
 
   return (
     <StyledWrapper href={isShortThought ? '#' : `/${data.slug}`} style={{ cursor: isShortThought ? 'initial' : 'pointer' }}>
