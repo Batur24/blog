@@ -17,7 +17,7 @@ const PostCard: React.FC<Props> = ({ data }) => {
   const isShortThought = data.tags && data.tags.filter(tag => tag == 'ShortThought').length > 0;
 
   return (
-    <StyledWrapper href={isShortThought ? '#' : `/${data.slug}`} style={{ cursor: isShortThought ? 'initial' : 'pointer'}}>
+    <StyledWrapper href={isShortThought ? '#' : `/${data.slug}`} style={{ cursor: isShortThought ? 'initial' : 'pointer' }}>
       <article>
         {/* {category && (
           <div className="category">
@@ -35,9 +35,12 @@ const PostCard: React.FC<Props> = ({ data }) => {
           </div>
         )}
         <div data-thumb={!!data.thumbnail} className="content">
-          <header className="top">
-            <h2>{data.title}</h2>
-          </header>
+          {
+            isShortThought ? null :
+              <header className="top">
+                <h2>{data.title}</h2>
+              </header>
+          }
           <div className="date">
             <div className="content">
               {formatDate(
@@ -70,7 +73,7 @@ const StyledWrapper = styled(Link)`
     margin-bottom: 1.5rem;
     border-radius: 1rem;
     background-color: ${({ theme }) =>
-      theme.scheme === "light" ? "white" : theme.colors.gray4};
+    theme.scheme === "light" ? "white" : theme.colors.gray4};
     transition-property: box-shadow;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 300ms;
@@ -143,7 +146,7 @@ const StyledWrapper = styled(Link)`
       > .summary {
         margin-bottom: 1rem;
         p {
-          display: none;
+          display: block;
           line-height: 2rem;
           color: ${({ theme }) => theme.colors.gray11};
 
