@@ -19,22 +19,22 @@ const PostDetail: React.FC<Props> = () => {
   return (
     <StyledWrapper>
       <article>
-        {category && (
+        {/* {category && (
           <div css={{ marginBottom: "0.5rem" }}>
             <Category readOnly={data.status?.[0] === "PublicOnDetail"}>
               {category}
             </Category>
           </div>
-        )}
+        )} */}
         {data.type[0] === "Post" && <PostHeader data={data} />}
         <div>
           <NotionRenderer recordMap={data.recordMap} />
         </div>
         {data.type[0] === "Post" && (
-          <>
+          <div css={{ paddingTop: "0.5rem"}}>
             <Footer />
             <CommentBox data={data} />
-          </>
+          </div>
         )}
       </article>
     </StyledWrapper>

@@ -10,6 +10,7 @@ import ProfileCard from "./ProfileCard"
 import ServiceCard from "./ServiceCard"
 import ContactCard from "./ContactCard"
 import PostList from "./PostList"
+import NavList from "./NavList"
 
 const HEADER_HEIGHT = 73
 
@@ -26,6 +27,7 @@ const Feed: React.FC<Props> = () => {
           height: `calc(100vh - ${HEADER_HEIGHT}px)`,
         }}
       >
+        <NavList />
         <TagList />
       </div>
       <div className="mid">
