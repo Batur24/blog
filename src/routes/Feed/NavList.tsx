@@ -15,7 +15,7 @@ const NavList: React.FC<Props> = () => {
       <div className="list">
           <Link href="/">Home</Link>
           <Link href="/photo">Photo</Link>
-          <Link href="/project">Project</Link>
+          <Link href="/#">Project</Link>
       </div>
     </StyledWrapper>
   )
