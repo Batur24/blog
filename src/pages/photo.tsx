@@ -32,9 +32,7 @@ const PhotoList: React.FC<Props> = ({ q }) => {
         )}
         <div className="my-4 justify-start">
           {filteredPosts.map((post) => (
-            <div>
-              <ImageCard key={post.id} data={post} />
-            </div>
+            <ImageCard key={post.id} data={post} />
           ))}
         </div>
       </div>
