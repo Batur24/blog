@@ -27,6 +27,12 @@ const PostList: React.FC<Props> = ({ q }) => {
         return searchContent.toLowerCase().includes(q.toLowerCase())
       })
 
+      // home page, no tag, show 3 only
+      if (!currentTag) {
+        newFilteredPosts = newFilteredPosts.slice(0,3)
+      }
+
+
       // tag
       if (currentTag) {
         newFilteredPosts = newFilteredPosts.filter(
