@@ -10,43 +10,32 @@ type Props = {
 }
 
 const ImageCard: React.FC<Props> = ({ data }) => {
-  const category = (data.category && data.category?.[0]) || undefined
-  const isShortThought = data.tags && data.tags.filter(tag => tag == '随想').length > 0;
 
   return (
-      <div className="flex mr-2">
+        <div>
         {data.thumbnail && (
             <img
-                className="w-8"
                 src={data.thumbnail}
                 alt={data.title}
-                css={{ width: '30%', marginTop: '20px', textAlign: 'center'}}
             />
         )}
-        {/* <div data-thumb={!!data.thumbnail} className="content">
-          {
-            isShortThought ? null :
+        <div data-thumb={!!data.thumbnail} className="content">
+          {/* {
               <header className="top">
                 <h2>{data.title}</h2>
               </header>
-          }
-          <div className="date">
-            <div className="content">
+          } */}
+          <div className="flex justify-center">
+            <p className="text-gray-600">
               {formatDate(
                 data?.date?.start_date || data.createdTime,
                 CONFIG.lang
               )}
-            </div>
+            </p>
           </div>
-          <div className="summary">
-            <p>{data.summary}</p>
-          </div> */}
-        {/* </div> */}
+        </div>
       </div>
   )
 }
 
 export default ImageCard
-
-const StyledWrapper = styled(Link)`
-`

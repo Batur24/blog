@@ -26,11 +26,11 @@ const PhotoList: React.FC<Props> = ({ q }) => {
 
   return (
     <>
-      <div className="my-2">
+      <div className="mt-10 mx-10">
         {!filteredPosts.length && (
           <p className="text-gray-500 dark:text-gray-300">Nothing! 😺</p>
         )}
-        <div className="my-4 justify-start">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {filteredPosts.map((post) => (
             <ImageCard key={post.id} data={post} />
           ))}
