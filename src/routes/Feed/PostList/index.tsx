@@ -27,8 +27,11 @@ const PostList: React.FC<Props> = ({ q }) => {
         return searchContent.toLowerCase().includes(q.toLowerCase())
       })
 
-      // home page, no tag, show 3 only
+      // home page, no tag, do not show photo and only show 3 only
       if (!currentTag) {
+        newFilteredPosts = newFilteredPosts.filter(
+          (post) => post && post.tags && !post.tags.includes("Photo")
+        )
         newFilteredPosts = newFilteredPosts.slice(0,3)
       }
 
